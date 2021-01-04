@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
   initialazeForm(){
     this.registerForm = new FormGroup({
       username: new FormControl(
-        'Hello', Validators.required),
+        '', Validators.required),
       password: new FormControl(
         '', [Validators.required, Validators.minLength(4), Validators.maxLength(8)]),
       confirmPassword: new FormControl(
