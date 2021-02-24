@@ -29,7 +29,7 @@ namespace API.Data
 
             if(predicate == "liked")
             {
-                likes = likes.Where(like => like.SourceUserID == userId);
+                likes = likes.Where(like => like.SourceUserId == userId);
                 users = likes.Select(like => like.LikedUser);
             }
 

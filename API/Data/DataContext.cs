@@ -16,12 +16,12 @@ namespace API.Data
             base.OnModelCreating(builder);
 
             builder.Entity<UserLike>()
-               .HasKey(k => new {k.SourceUserID, k.LikedUserID}); 
+               .HasKey(k => new {k.SourceUserId, k.LikedUserID}); 
 
             builder.Entity<UserLike>()
                 .HasOne(s => s.SourceUser)
                 .WithMany(l => l.LikedUsers)
-                .HasForeignKey(s => s.SourceUserID)
+                .HasForeignKey(s => s.SourceUserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.Entity<UserLike>()
